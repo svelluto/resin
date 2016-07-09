@@ -12,7 +12,7 @@ RUN sed -i '1s#^#deb http://archive.raspberrypi.org/debian jessie main\n#' /etc/
 RUN apt-get update
 
 # Install required packages
-RUN apt-get install bluez bluez-firmware
+RUN apt-get install bluez bluez-firmware bluez-tools
 
 WORKDIR usr/src/app
 
