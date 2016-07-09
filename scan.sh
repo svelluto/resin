@@ -29,6 +29,8 @@ if [ $FAILED -eq 1 ]; then
     echo "TEST FAILED"
 else
     echo "TEST PASSED"
+	
+	bt-audio -c $VellutoBluetooth
 fi
 
 # Don't exit the process
