@@ -19,7 +19,7 @@ RUN apt-get install build-essential xz-utils libdbus-1-dev libdbus-glib-1-dev li
 RUN mkdir /source
 RUN wget -O /source/bluez-5.40.tar.xz http://www.kernel.org/pub/linux/bluetooth/bluez-5.40.tar.xz
 RUN cd /source && ls && tar xvf bluez-5.40.tar.xz
-RUN cd /source/bluez-5.40 && ./configure --disable-systemd
+RUN cd /source/bluez-5.40 && ./configure
 RUN cd /source/bluez-5.40 && make
 RUN cd /source/bluez-5.40 && sudo make install
 
