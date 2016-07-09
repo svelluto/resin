@@ -18,12 +18,11 @@ RUN apt-get install libdbus-1-dev libdbus-glib-1-dev libglib2.0-dev libical-dev 
 
 RUN mkdir /source
 RUN cd /source
-RUN wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.40.tar.xz
-RUN tar xvf bluez-5.40.tar.xz
-RUN cd bluez-5.40
-RUN ./configure --disable-systemd
-RUN make
-RUN sudo make install
+RUN wget -O /source/bluez-5.40.tar.xz http://www.kernel.org/pub/linux/bluetooth/bluez-5.40.tar.xz
+RUN tar xvf /source/bluez-5.40.tar.xz
+RUN cd /source/bluez-5.40 && ./configure --disable-systemd
+RUN cd /source/bluez-5.40 && make
+RUN cd /source/bluez-5.40 && sudo make install
 
 
 WORKDIR usr/src/app
