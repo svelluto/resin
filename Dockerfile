@@ -12,7 +12,9 @@ RUN sed -i '1s#^#deb http://archive.raspberrypi.org/debian jessie main\n#' /etc/
 RUN apt-get update
 
 # Install required packages
-RUN apt-get install bluez bluez-firmware bluez-tools pulseaudio-module-bluetooth python-gobject python-gobject-2
+#RUN apt-get install bluez bluez-firmware bluez-tools pulseaudio-module-bluetooth python-gobject python-gobject-2
+
+RUN apt-get install bluetooth pulseaudio pulseaudio-module-bluetooth alsa-base alsa-utils blueman pavucontrol
 
 #RUN apt-get install build-essential xz-utils libdbus-1-dev libdbus-glib-1-dev libglib2.0-dev libical-dev libreadline-dev libudev-dev libusb-dev make  pulseaudio-alsa, pulseaudio-bluetooth, bluez, bluez-libs, bluez-utils, bluez-firmware
 
