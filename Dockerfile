@@ -8,15 +8,16 @@ RUN wget http://archive.raspberrypi.org/debian/raspberrypi.gpg.key -O - | sudo a
 # Add apt source of the foundation repository
 # We need this source because bluez needs to be patched in order to work with rpi3 ( Issue #1314: How to get BT working on Pi3B. by clivem in raspberrypi/linux on GitHub )
 # Add it on top so apt will pick up packages from there
-RUN sed -i '1s#^#deb http://archive.raspberrypi.org/debian jessie main\n#' /etc/apt/sources.list
+#RUN sed -i '1s#^#deb http://archive.raspberrypi.org/debian jessie main\n#' /etc/apt/sources.list
+
 RUN apt-get update
 
 # Install required packages
 #RUN apt-get install bluez bluez-firmware bluez-tools pulseaudio-module-bluetooth python-gobject python-gobject-2
 
-RUN apt-get install vim bluez pulseaudio-module-bluetooth python-gobject python-gobject-2
+RUN apt-get install vim bluez pulseaudio-module-bluetooth python-gobject python-gobject-2 bluez-tools qdbus git-core
 
-RUN usermod -a -G lp pi
+#RUN usermod -a -G lp pi
 
 #RUN apt-get install build-essential xz-utils libdbus-1-dev libdbus-glib-1-dev libglib2.0-dev libical-dev libreadline-dev libudev-dev libusb-dev make  pulseaudio-alsa, pulseaudio-bluetooth, bluez, bluez-libs, bluez-utils, bluez-firmware
 
